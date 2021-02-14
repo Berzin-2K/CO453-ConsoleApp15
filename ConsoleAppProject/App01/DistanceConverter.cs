@@ -18,6 +18,7 @@ namespace ConsoleAppProject.App01
         /// </summary>
         public void run()
         {
+            OutputHeading();
             InputMiles();
             CalculateFeet();
             OutputFeet();
@@ -43,6 +44,14 @@ namespace ConsoleAppProject.App01
             Console.WriteLine(miles + " miles is " + feet + " feet! ");
 
         }
-
+        private void OutputHeading()
+        {
+            Console.WriteLine();
+            Console.WriteLine(" ------------------------------------ ");
+            Console.WriteLine(" Feet to miles converter ");
+            Console.WriteLine(" By Berzin Daruwala ");
+            Console.WriteLine(" ------------------------------------ ");
+            Console.WriteLine();
+        }
     }
 }
