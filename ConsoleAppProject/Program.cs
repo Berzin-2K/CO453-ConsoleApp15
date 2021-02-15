@@ -22,6 +22,9 @@ namespace ConsoleAppProject
 
             DistanceConverter converter = new DistanceConverter();
             converter.run();
+            converter.MilesToFeet();
+            converter.FeetToMiles();
+            converter.MilesToMetres();
 
 
         }
