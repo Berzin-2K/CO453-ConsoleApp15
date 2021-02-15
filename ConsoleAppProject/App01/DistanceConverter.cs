@@ -34,6 +34,7 @@ namespace ConsoleAppProject.App01
         {
             OutputHeading();
             InputMiles();
+            InputFeet();
             CalculateFeet();
             OutputFeet();
         }
@@ -42,6 +43,7 @@ namespace ConsoleAppProject.App01
         {
             OutputHeading();
             InputMiles();
+            InputFeet();
             CalculateFeet();
             OutputFeet();
         }
@@ -50,6 +52,7 @@ namespace ConsoleAppProject.App01
         {
             OutputHeading();
             InputMiles();
+            InputMetres();
             CalculateFeet();
             OutputFeet();
         }
@@ -71,6 +74,12 @@ namespace ConsoleAppProject.App01
             string value = Console.ReadLine();
             feet = Convert.ToDouble(value);
         }
+        private void InputMetres()
+        {
+            Console.Write("You need to input the number of metres > ");
+            string value = Console.ReadLine();
+            metres = Convert.ToDouble(value);
+        }
         private void CalculateFeet()
         {
             feet = miles * FEET_IN_MILES;
@@ -86,7 +95,11 @@ namespace ConsoleAppProject.App01
         }
         private void OutputMiles()
         {
-            Console.WriteLine(feet + " feet is " + miles + " miles ");
+            Console.WriteLine(feet + " feet is " + miles + " miles! ");
+        }
+        private void OutputMetres()
+        {
+            Console.WriteLine(miles + " miles is " + metres + " metres! ");
         }
         private void OutputHeading()
         {
