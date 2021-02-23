@@ -54,6 +54,7 @@ namespace ConsoleAppProject.App01
 
         private void CalculateDistance()
         {
+            
             if (fromUnit == MILES && toUnit == FEET)
             {
                 toDistance = fromDistance * FEET_IN_MILES;
@@ -104,6 +105,7 @@ namespace ConsoleAppProject.App01
             {
                 return MILES;
             }
+            else Console.Write("Invalid choice");
 
             return null;
         }
@@ -124,6 +126,7 @@ namespace ConsoleAppProject.App01
         /// prompt user to enter the distance in miles 
         /// inputs miles as a double number
         /// </summary>
+        /// 
         private double InputDistance(string prompt)
         {
             Console.Write(prompt);
