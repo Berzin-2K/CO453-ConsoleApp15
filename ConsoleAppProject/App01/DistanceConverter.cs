@@ -12,42 +12,37 @@ namespace ConsoleAppProject.App01
         private const int FEET_IN_MILES = 5280;
 
         private const double Metres_IN_MILES = 1609.34;
+       
+        private const double Feet_IN_Metres = 3.28084;
 
-        private double miles;
-        
-        private double feet;
+        private const string FEET = "feet";
+        private const string METRES = "metres";
+        private const string MILES = "miles";
 
-        private double metres;
+        private double fromDistance;
+        private double toDistance;
 
+        private string fromUnit;
+        private string toUnit;
+
+
+        public DistanceConverter()
+        {
+            fromUnit = MILES;
+            toUnit = FEET;
+        }
         /// <summary>
         /// 
         /// </summary>
 
-        public void MilesToFeet()
+        public void ConvertDistance()
         {
-            OutputHeading1();
-            miles = InputDistance("please enter the number of miles > ");
-            CalculateFeet();
-            OutputDistance(miles, nameof(miles), feet, nameof(feet));
+            OutputHeading($"Converting {fromUnit} to {toUnit}");
+            fromDistance = InputDistance($"please enter the number of {fromUnit} > ");
+            
+            //CalculateFeet();
+            OutputDistance();
         }
-
-        public void FeetToMiles()
-        {
-            OutputHeading2();
-            feet = InputDistance("please enter the number of feet > ");
-            CalculateMiles();
-            OutputDistance(feet, nameof(feet), miles, nameof(miles));
-
-        }
-
-        public void MilesToMetres()
-        {
-            OutputHeading3();
-            miles = InputDistance("please enter the number of miles > ");
-            CalculateMetres();
-            OutputDistance(miles, nameof(miles), metres, nameof(metres));
-        }
-
         /// <summary>
         /// prompt user to enter the distance in miles 
         /// inputs miles as a double number
@@ -59,50 +54,24 @@ namespace ConsoleAppProject.App01
            return Convert.ToDouble(value);
 
         }
-        private void CalculateFeet()
+        private void OutputDistance()
         {
-            feet = miles * FEET_IN_MILES;
-        }
-        private void CalculateMiles()
-        {
-            miles = feet / FEET_IN_MILES;
-        }
-        private void CalculateMetres()
-        {
-            metres = miles * Metres_IN_MILES;
-        }
-        private void OutputDistance(double fromDistance, string fromUnit, double toDistance, string toUnit )
-        {
-            Console.WriteLine($" {fromDistance}   {fromUnit}" +
-                $"  is {toDistance}   {toUnit}!");
+            Console.WriteLine($" {fromDistance}  {fromUnit}" +
+                $" is {toDistance}  {toUnit}!");
 
         }
-        private void OutputHeading1()
+        private void OutputHeading(string Prompt)
         {
             Console.WriteLine();
             Console.WriteLine(" ------------------------------------ ");
-            Console.WriteLine(" Feet to Miles converter ");
+            Console.WriteLine(" Distance Converter ");
             Console.WriteLine(" By Berzin Daruwala ");
             Console.WriteLine(" ------------------------------------ ");
             Console.WriteLine();
-        }
-        private void OutputHeading2()
-        {
-            Console.WriteLine();
-            Console.WriteLine(" ------------------------------------ ");
-            Console.WriteLine(" Miles to Feet converter ");
-            Console.WriteLine(" By Berzin Daruwala ");
-            Console.WriteLine(" ------------------------------------ ");
+
+            Console.WriteLine(Prompt);
             Console.WriteLine();
         }
-        private void OutputHeading3()
-        {
-            Console.WriteLine();
-            Console.WriteLine(" ------------------------------------ ");
-            Console.WriteLine(" Miles to Metres converter ");
-            Console.WriteLine(" By Berzin Daruwala ");
-            Console.WriteLine(" ------------------------------------ ");
-            Console.WriteLine();
-        }
+       
     }
 }
