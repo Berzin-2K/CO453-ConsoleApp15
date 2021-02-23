@@ -37,12 +37,54 @@ namespace ConsoleAppProject.App01
 
         public void ConvertDistance()
         {
+            fromUnit = SelectUnit("please select the from distance unit > ");
+            toUnit = SelectUnit("please select the to distance unit > ");
+
             OutputHeading($"Converting {fromUnit} to {toUnit}");
             fromDistance = InputDistance($"please enter the number of {fromUnit} > ");
             
             //CalculateFeet();
             OutputDistance();
         }
+
+        private string SelectUnit(string prompt)
+        {
+            string choice = DisplayChoices(prompt);
+
+            return ExecuteChoice(choice);
+
+        }
+
+        private static string ExecuteChoice(string choice)
+        {
+            if (choice.Equals("1"))
+            {
+                return FEET;
+            }
+            else if (choice.Equals("2"))
+            {
+                return METRES;
+            }
+            else if (choice.Equals("3"))
+            {
+                return MILES;
+            }
+
+            return null;
+        }
+
+        private static string DisplayChoices(string prompt)
+        {
+            Console.WriteLine();
+            Console.WriteLine($" 1. {FEET}");
+            Console.WriteLine($" 2. {METRES}");
+            Console.WriteLine($" 3. {MILES}");
+
+            Console.Write(prompt);
+            string choice = Console.ReadLine();
+            return choice;
+        }
+
         /// <summary>
         /// prompt user to enter the distance in miles 
         /// inputs miles as a double number
