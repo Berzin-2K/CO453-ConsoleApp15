@@ -25,24 +25,24 @@ namespace ConsoleAppProject.App01
 
         public void MilesToFeet()
         {
-            OutputHeading();
-            InputMiles();
+            OutputHeading1();
+            miles = InputDistance("please enter the number of miles > ");
             CalculateFeet();
             OutputFeet();
         }
 
         public void FeetToMiles()
         {
-            OutputHeading();
-            InputFeet();
+            OutputHeading2();
+            feet = InputDistance("please enter the number of feet > ");
             CalculateMiles();
             OutputMiles();
         }
 
         public void MilesToMetres()
         {
-            OutputHeading();
-            InputMiles();
+            OutputHeading3();
+            miles = InputDistance("please enter the number of miles > ");
             CalculateMetres();
             OutputMetres();
         }
@@ -51,18 +51,12 @@ namespace ConsoleAppProject.App01
         /// prompt user to enter the distance in miles 
         /// inputs miles as a double number
         /// </summary>
-        private void InputMiles()
+        private double InputDistance(string prompt)
         {
-            Console.Write("You need to input the number of miles > ");
+            Console.Write(prompt);
             string value = Console.ReadLine();
-            miles = Convert.ToDouble(value);
+           return Convert.ToDouble(value);
 
-        }
-        private void InputFeet()
-        {
-            Console.Write("You need to input the number of feet > ");
-            string value = Console.ReadLine();
-            feet = Convert.ToDouble(value);
         }
         private void InputMetres()
         {
@@ -95,11 +89,29 @@ namespace ConsoleAppProject.App01
         {
             Console.WriteLine(miles + " miles is " + metres + " metres! ");
         }
-        private void OutputHeading()
+        private void OutputHeading1()
         {
             Console.WriteLine();
             Console.WriteLine(" ------------------------------------ ");
-            Console.WriteLine(" Feet to miles converter ");
+            Console.WriteLine(" Feet to Miles converter ");
+            Console.WriteLine(" By Berzin Daruwala ");
+            Console.WriteLine(" ------------------------------------ ");
+            Console.WriteLine();
+        }
+        private void OutputHeading2()
+        {
+            Console.WriteLine();
+            Console.WriteLine(" ------------------------------------ ");
+            Console.WriteLine(" Miles to Feet converter ");
+            Console.WriteLine(" By Berzin Daruwala ");
+            Console.WriteLine(" ------------------------------------ ");
+            Console.WriteLine();
+        }
+        private void OutputHeading3()
+        {
+            Console.WriteLine();
+            Console.WriteLine(" ------------------------------------ ");
+            Console.WriteLine(" Miles to Metres converter ");
             Console.WriteLine(" By Berzin Daruwala ");
             Console.WriteLine(" ------------------------------------ ");
             Console.WriteLine();
