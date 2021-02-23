@@ -77,14 +77,6 @@ namespace ConsoleAppProject.App01
                 $"  is {toDistance}   {toUnit}!");
 
         }
-        private void OutputMiles()
-        {
-            Console.WriteLine(feet + " feet is " + miles + " miles! ");
-        }
-        private void OutputMetres()
-        {
-            Console.WriteLine(miles + " miles is " + metres + " metres! ");
-        }
         private void OutputHeading1()
         {
             Console.WriteLine();
