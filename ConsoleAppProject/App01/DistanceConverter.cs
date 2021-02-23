@@ -42,9 +42,22 @@ namespace ConsoleAppProject.App01
 
             OutputHeading($"Converting {fromUnit} to {toUnit}");
             fromDistance = InputDistance($"please enter the number of {fromUnit} > ");
-            
-            //CalculateFeet();
+
+            calculateDistance();
+
             OutputDistance();
+        }
+
+        private void calculateDistance()
+        {
+            if (fromUnit == MILES && toUnit == FEET)
+            {
+                toDistance = fromDistance * FEET_IN_MILES;
+            }
+            else if (fromUnit == FEET && toUnit == MILES)
+            {
+                toDistance = fromDistance / FEET_IN_MILES;
+            }
         }
 
         private string SelectUnit(string prompt)
