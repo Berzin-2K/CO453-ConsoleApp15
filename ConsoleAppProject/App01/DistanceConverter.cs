@@ -58,12 +58,6 @@ namespace ConsoleAppProject.App01
            return Convert.ToDouble(value);
 
         }
-        private void InputMetres()
-        {
-            Console.Write("You need to input the number of metres > ");
-            string value = Console.ReadLine();
-            metres = Convert.ToDouble(value);
-        }
         private void CalculateFeet()
         {
             feet = miles * FEET_IN_MILES;
