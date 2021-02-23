@@ -70,7 +70,7 @@ namespace ConsoleAppProject.App01
         {
             metres = miles * Metres_IN_MILES;
         }
-        private void OutputFeet()
+        private void Outputdistance()
         {
             Console.WriteLine(miles + " miles is " + feet + " feet! ");
 
