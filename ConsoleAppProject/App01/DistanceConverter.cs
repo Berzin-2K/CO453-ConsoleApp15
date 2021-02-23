@@ -47,12 +47,12 @@ namespace ConsoleAppProject.App01
 
             fromDistance = InputDistance($" please enter the number of {fromUnit} > ");
 
-            calculateDistance();
+            CalculateDistance();
 
             OutputDistance();
         }
 
-        private void calculateDistance()
+        private void CalculateDistance()
         {
             if (fromUnit == MILES && toUnit == FEET)
             {
@@ -65,6 +65,18 @@ namespace ConsoleAppProject.App01
             else if (fromUnit == MILES && toUnit == METRES)
             {
                 toDistance = fromDistance * Metres_IN_MILES;
+            }
+            else if (fromUnit == METRES && toUnit == MILES)
+            {
+                toDistance = fromDistance / Metres_IN_MILES;
+            }
+            else if (fromUnit == METRES && toUnit == FEET)
+            {
+                toDistance = fromDistance * Feet_IN_Metres;
+            }
+            else if (fromUnit == FEET && toUnit == METRES)
+            {
+                toDistance = fromDistance / Feet_IN_Metres;
             }
         }
 
