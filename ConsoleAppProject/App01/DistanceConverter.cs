@@ -37,11 +37,15 @@ namespace ConsoleAppProject.App01
 
         public void ConvertDistance()
         {
-            fromUnit = SelectUnit("please select the from distance unit > ");
-            toUnit = SelectUnit("please select the to distance unit > ");
+            OutputHeading();
 
-            OutputHeading($"Converting {fromUnit} to {toUnit}");
-            fromDistance = InputDistance($"please enter the number of {fromUnit} > ");
+            fromUnit = SelectUnit(" please select the from distance unit > ");
+            toUnit = SelectUnit(" please select the to distance unit > ");
+
+            Console.WriteLine($" Converting {fromUnit} to {toUnit}");
+
+
+            fromDistance = InputDistance($" please enter the number of {fromUnit} > ");
 
             calculateDistance();
 
@@ -58,13 +62,19 @@ namespace ConsoleAppProject.App01
             {
                 toDistance = fromDistance / FEET_IN_MILES;
             }
+            else if (fromUnit == MILES && toUnit == METRES)
+            {
+                toDistance = fromDistance * Metres_IN_MILES;
+            }
         }
 
         private string SelectUnit(string prompt)
         {
             string choice = DisplayChoices(prompt);
 
-            return ExecuteChoice(choice);
+           string unit = ExecuteChoice(choice);
+            Console.WriteLine($"\n You have chosen {unit}");
+            return unit;
 
         }
 
@@ -115,7 +125,7 @@ namespace ConsoleAppProject.App01
                 $" is {toDistance}  {toUnit}!");
 
         }
-        private void OutputHeading(string Prompt)
+        private void OutputHeading()
         {
             Console.WriteLine();
             Console.WriteLine(" ------------------------------------ ");
@@ -124,8 +134,7 @@ namespace ConsoleAppProject.App01
             Console.WriteLine(" ------------------------------------ ");
             Console.WriteLine();
 
-            Console.WriteLine(Prompt);
-            Console.WriteLine();
+            
         }
        
     }
