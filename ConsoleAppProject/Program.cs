@@ -24,6 +24,9 @@ namespace ConsoleAppProject
 
             converter.ConvertDistance();
 
+            BMI converter = new BMI();
+
+            converter.converter();
 
         }
     }
