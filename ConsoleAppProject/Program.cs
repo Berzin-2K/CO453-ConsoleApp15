@@ -23,6 +23,16 @@ namespace ConsoleAppProject
             ConsoleHelper.OutputHeading("\tBMI Calculator\n\t By Berzin Daruwala ");
             ConsoleHelper.OutputIntroduction(" Introduction placeholder here ");
 
+
+            BMI calculator = new BMI();
+            calculator.OutpuUnits();
+            calculator.GetUnit();
+            calculator.GetWeight();
+            calculator.GetHeight();
+            calculator.CalculateBMI();
+            calculator.OutputResult();
+           
+
         }
     }
 }
