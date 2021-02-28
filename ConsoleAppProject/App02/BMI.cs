@@ -64,10 +64,7 @@ namespace ConsoleAppProject.App02
         {
             if (SelectedUnit == METRIC)
             {
-                height /= 100;
-                Console.WriteLine(height);
-                bmiResult = weight / (height * height);
-                Console.WriteLine(weight);
+                bmiResult = (weight / height / height) * 10000;
             }
         }
 
