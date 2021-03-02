@@ -108,6 +108,8 @@ namespace ConsoleAppProject.App02
         {
             Console.WriteLine(SelectedUnit + " " + bmiResult);
             OutputMessage();
+            Console.WriteLine(" Note - if you are Black, Asian or an ethnic minority you have a much higher risk" +
+                 " Adults at 23.0 or more are at risk. ");
         }
     }
 }

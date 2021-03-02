@@ -21,9 +21,7 @@ namespace ConsoleAppProject
             Console.WriteLine("BNU CO453 Applications Programming 2020-2021!");
             Console.WriteLine();
             ConsoleHelper.OutputHeading("\tBMI Calculator\n\t By Berzin Daruwala ");
-            ConsoleHelper.OutputIntroduction(" Note - if you are Black, Asian or an ethnic minority you have a much higher risk" +
-                 " Adults 23.0 or more are at risk, " +
-                 " as well as adults at 27.00 or more ");
+            ConsoleHelper.OutputIntroduction(" The Body Mass Index is a measure that uses your height and weight to work out if your weight is healthy. ");
 
 
             BMI calculator = new BMI();
