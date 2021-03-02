@@ -36,14 +36,18 @@ namespace ConsoleAppProject.App02
         {
             if (SelectedUnit == METRIC)
             {
-                Console.WriteLine("please enter the weight in KGs:");
+                Console.WriteLine(" You have chosen metric - please enter the weight in KGs:");
             }
             else
             {
                 Console.WriteLine("please enter the weight in Stones");
-                Console.WriteLine("please enter the weight in Pounds");
             }
-            weight = Convert.ToDouble(Console.ReadLine());
+            if (SelectedUnit == IMPERIAL)
+            {
+                Console.WriteLine(" You have chosen Imperial - Please enter weight In pounds");
+            }
+    
+                weight = Convert.ToDouble(Console.ReadLine());
             return weight;
         }
         public double GetHeight()
@@ -52,10 +56,10 @@ namespace ConsoleAppProject.App02
             {
                 Console.WriteLine("please enter the height in CMs:");
             }
-            else
+            
+            if (SelectedUnit == IMPERIAL)
             {
-                Console.WriteLine("please enter the height in Feet:");
-                Console.WriteLine("please enter the height in Inches:");
+                Console.WriteLine("please enter the height in  Inches");
             }
             height = Convert.ToDouble(Console.ReadLine());
             return height;
@@ -65,6 +69,10 @@ namespace ConsoleAppProject.App02
             if (SelectedUnit == METRIC)
             {
                 bmiResult = (weight / height / height) * 10000;
+            }
+            else if (SelectedUnit == IMPERIAL)
+            {
+                bmiResult = (weight / height / height) * 703;
             }
         }
 
