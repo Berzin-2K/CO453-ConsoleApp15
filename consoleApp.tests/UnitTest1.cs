@@ -1,13 +1,18 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using consoleAppProject.App01;
+
 
 namespace consoleApp.tests
 {
     [TestClass]
-    public class UnitTest1
+    public class TestDistanceConverter
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestMilestoFeet()
         {
+            DistanceConverter converter = new DistanceConverter();
+
+            converter.FromUnit = 
         }
     }
 }
