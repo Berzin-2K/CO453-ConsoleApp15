@@ -1,4 +1,6 @@
 ﻿using System;
+using ConsoleAppProject.App01;
+using ConsoleAppProject.App02;
 using System.Collections.Generic;
 using System.Text;
 
@@ -26,8 +28,29 @@ namespace ConsoleAppProject
             {
                 choiceNo++;
                 Console.WriteLine(choiceNo + ". " + choice);
-                
             }
+        }
+        public static int SelectChoice(string[] choices)
+        {
+            int choiceNo = 0;
+            foreach (string choice in choices)
+            {
+                choiceNo++;
+                Console.WriteLine($"  {choiceNo}. {choice}");
+            }
+            // get the users choice 
+            Console.WriteLine("please enter your choice > ");
+
+            string value = Console.ReadLine();
+
+            choiceNo = Convert.ToInt32(value);
+                
+            return choiceNo;
+
+
+
+
         }
     }
 }
+

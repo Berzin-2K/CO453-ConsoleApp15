@@ -14,24 +14,42 @@ namespace ConsoleAppProject
     /// </summary>
     public static class Program
     {
+        private static DistanceConverter converter = new DistanceConverter();
+
+        private static BMI Calculator = new BMI();
         public static void Main(string[] args)
         {
+
             Console.ForegroundColor = ConsoleColor.Yellow;
-            
+
             Console.WriteLine("BNU CO453 Applications Programming 2020-2021!");
             Console.WriteLine();
-            ConsoleHelper.OutputHeading("\tBMI Calculator\n\t By Berzin Daruwala ");
-            ConsoleHelper.OutputIntroduction(" The Body Mass Index is a measure that uses your height and weight to work out if your weight is healthy. ");
+            Console.WriteLine("1. Distance converter");
+            Console.WriteLine("2. BMI calculator");
+            Console.WriteLine();
+            string choice = Console.ReadLine();
 
 
-            BMI calculator = new BMI();
-            calculator.OutpuUnits();
-            calculator.GetUnit();
-            calculator.GetWeight();
-            calculator.GetHeight();
-            calculator.CalculateBMI();
-            calculator.OutputResult();
 
+
+
+          
+
+            string[] choices = { " Distance Converter ", " BMI Calculator " };
+
+            int choiceNo = ConsoleHelper.SelectChoice(choices);
+
+            if (choiceNo == 1)
+            {
+                converter.ConvertDistance();
+            }
+            if (choiceNo == 2)
+            {
+                Calculator.OutpuUnits();
+            }
         }
+
+
+
     }
 }

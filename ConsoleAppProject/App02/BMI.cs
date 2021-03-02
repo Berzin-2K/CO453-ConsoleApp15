@@ -22,6 +22,8 @@ namespace ConsoleAppProject.App02
         public string[] MenuChoices = { METRIC, IMPERIAL};
         public void OutpuUnits()
         {
+            ConsoleHelper.OutputHeading("\tBMI Calculator\n\t By Berzin Daruwala ");
+            ConsoleHelper.OutputIntroduction(" The Body Mass Index is a measure that uses your height and weight to work out if your weight is healthy. ");
             ConsoleHelper.OutputMenu(MenuChoices);
 
            
