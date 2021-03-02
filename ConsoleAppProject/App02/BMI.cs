@@ -78,7 +78,7 @@ namespace ConsoleAppProject.App02
         {
             if (bmiResult < 18.50)
             {
-                Console.WriteLine("You are Underweight - You are potentially at risk seek contact your GP for advice");
+                Console.WriteLine("You are Underweight - You are potentially at risk seek contact your GP for adv");
             }
             else if ((bmiResult >= 18.5) && (bmiResult < 24.9))
             {
