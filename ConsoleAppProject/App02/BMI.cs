@@ -9,15 +9,20 @@ namespace ConsoleAppProject.App02
     /// </author>
     public class BMI
     {
-        public const string METRIC = "METRIC";
+        public const string METRIC = "METRIC"; 
         public const string IMPERIAL = "IMPERIAL";
+        public const string FEET = "feet";
+        public const string POUNDS = "pounds";
 
-        public double weight;
-        public double height;
+        public double weight { get; set; }
+        public double height { get; set; } 
 
-        public string SelectedUnit;
+        public string SelectedUnit { get; set; }
 
-        public double bmiResult;
+        public double bmiResult { get; set; }
+        public static double Pounds { get; set; }
+
+        public static double feet { get; set; }
 
         public string[] MenuChoices = { METRIC, IMPERIAL};
         public void OutpuUnits()
@@ -28,6 +33,7 @@ namespace ConsoleAppProject.App02
 
            
         }
+
         public string GetUnit()
         {
             SelectedUnit = Console.ReadLine().ToUpper();
@@ -64,6 +70,8 @@ namespace ConsoleAppProject.App02
             return height;
         }
         public void CalculateBMI()
+
+
         {
             if (SelectedUnit == METRIC)
             {
@@ -75,6 +83,9 @@ namespace ConsoleAppProject.App02
                 bmiResult = (weight / height / height) * 703;
             }
             else Console.Write("Invalid choice");
+
+          
+            
         }
         private void OutputMessage()
         {

@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ConsoleAppProject.App01;
+using ConsoleAppProject.App02;
 namespace ConsoleAppProjects.test
 {
     [TestClass]
@@ -66,5 +67,27 @@ namespace ConsoleAppProjects.test
 
             Assert.AreEqual(expectedDistance, converter.ToDistance);
         }
+    }
+}
+[TestClass]
+
+public class TestBMICalculator
+{
+    [TestMethod]
+
+    public void TestunderweightBMIMetric()
+    {
+        BMI Calculator = new BMI();
+
+        Calculator.weight = BMI.Pounds;
+        Calculator.height = BMI.feet;
+
+        Calculator.bmiResult = 18.5;
+        Calculator.CalculateBMI();
+
+        double expectedCalculation = 18.50;
+
+        Assert.AreEqual(expectedCalculation, Calculator.bmiResult);
+
     }
 }
