@@ -20,6 +20,7 @@ namespace ConsoleAppProject.App03
         [Description("Upper Second")]
         B, 
         [Description("First Class")]
-        A
+        A,
+        X,
     }
 }

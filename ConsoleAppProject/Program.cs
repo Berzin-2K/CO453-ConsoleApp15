@@ -26,6 +26,7 @@ namespace ConsoleAppProject
             Console.WriteLine();
             Console.WriteLine("1. Distance converter");
             Console.WriteLine("2. BMI calculator");
+            Console.WriteLine("3. Student Grades calculator");
             Console.WriteLine();
             string choice = Console.ReadLine();
 

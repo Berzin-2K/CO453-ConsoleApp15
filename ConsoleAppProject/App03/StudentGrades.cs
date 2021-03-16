@@ -18,15 +18,15 @@ namespace ConsoleAppProject.App03
 
         public string[] Students { get; set; }
 
-        public int[] marks { get; set; }
+        public int[] Marks { get; set; }
 
         public int[] GradeProfile { get; set; }
 
-        public double[] Mean { get; set; }
+        public double  Mean { get; set; }
 
-        public int [] Minimum { get; set; }
+        public int Minimum { get; set; }
 
-        public int [] Maxmimum { get; set; }
+        public int  Maxmimum { get; set; }
 
         public StudentGrades()
         {
@@ -39,26 +39,74 @@ namespace ConsoleAppProject.App03
                 };
             GradeProfile = new int[(int)Grades.A + 1];
 
-            marks = new int[Students.Length]; 
+            Marks = new int[Students.Length]; 
 
         }
         public Grades ConvertToGrade(int mark)
         {
-            if (mark >= 0 && mark < LowestGradeD)
+            if (mark >= LowestMark && mark < LowestGradeD)
             {
                 return Grades.F;
             }
-            else return Grades.D;
+            else if (mark >= LowestGradeD && mark < LowestGradeC)
+            {
+                return Grades.D;
+            }
+            else if (mark >= LowestGradeC && mark < LowestGradeB)
+            {
+                return Grades.C;
+            }
+            else if (mark >= LowestGradeB && mark < LowestGradeA)
+            {
+                return Grades.B;
+            }
+            else if (mark >= LowestGradeA && mark < HighestMark)
+            {
+                return Grades.A;
+            }
+            else return Grades.X;
         }
 
         public void CalculateStats()
         {
-            throw new NotImplementedException();
+            double total = 0;
+
+            foreach (int mark in Marks)
+            {
+                total = total + mark;
+            }
+            Mean = total / Marks.Length;
+        }
+        private void OutputGradeProfile()
+        {
+            Grades grade = Grades.X;
+            Console.WriteLine();
+
+            foreach (int count in GradeProfile)
+            {
+                int percentage = count * 100 / Marks.Length;
+                Console.WriteLine($"Grade {grade} {percentage}% count {count}");
+                grade++;
+            }
+            Console.WriteLine();
+
         }
 
         public void CalculateGradeProfile()
         {
-            throw new NotImplementedException(); 
+            for (int i = 0; i < GradeProfile.Length; i++)
+            {
+                GradeProfile[i] = 0; 
+            }
+            foreach (int mark in Marks)
+            {
+                Grades grade = ConvertToGrade(mark);
+                GradeProfile[(int)grade]++;
+
+                OutputGradeProfile();
+            }
+            
+            
         }
 
     }
