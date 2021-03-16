@@ -26,7 +26,7 @@ namespace ConsoleAppProject.App03
 
         public int Minimum { get; set; }
 
-        public int  Maxmimum { get; set; }
+        public int  Maximum { get; set; }
 
         public StudentGrades()
         {
@@ -69,12 +69,19 @@ namespace ConsoleAppProject.App03
 
         public void CalculateStats()
         {
+            Minimum = Marks[0];
+            Maximum = Marks[0];
+
             double total = 0;
 
-            foreach (int mark in Marks)
+            foreach (int marks in Marks)
             {
-                total = total + mark;
+                if (marks > Maximum) Maximum = marks;
+                if (marks > Minimum) Minimum = marks;
+
+                total += marks; 
             }
+
             Mean = total / Marks.Length;
         }
         private void OutputGradeProfile()
@@ -91,8 +98,7 @@ namespace ConsoleAppProject.App03
             Console.WriteLine();
 
         }
-
-        public void CalculateGradeProfile()
+         public void CalculateGradeProfile()
         {
             for (int i = 0; i < GradeProfile.Length; i++)
             {
@@ -106,8 +112,13 @@ namespace ConsoleAppProject.App03
                 OutputGradeProfile();
             }
             
+
+            
             
         }
-
+        public void CalculateMark()
+        {
+            
+        }
     }
 }
