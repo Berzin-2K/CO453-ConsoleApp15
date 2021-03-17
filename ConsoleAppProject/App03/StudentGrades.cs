@@ -16,17 +16,20 @@ namespace ConsoleAppProject.App03
         public const int LowestGradeA = 70;
         public const int HighestMark = 100;
 
+
         public string[] Students { get; set; }
 
         public int[] Marks { get; set; }
 
+        public int[] moduleNo { get; set; }
+
         public int[] GradeProfile { get; set; }
 
-        public double  Mean { get; set; }
+        public double Mean { get; set; }
 
         public int Minimum { get; set; }
 
-        public int  Maximum { get; set; }
+        public int Maximum { get; set; }
 
         public StudentGrades()
         {
@@ -39,7 +42,7 @@ namespace ConsoleAppProject.App03
                 };
             GradeProfile = new int[(int)Grades.A + 1];
 
-            Marks = new int[Students.Length]; 
+            Marks = new int[Students.Length];
 
         }
         public Grades ConvertToGrade(int mark)
@@ -79,7 +82,7 @@ namespace ConsoleAppProject.App03
                 if (marks > Maximum) Maximum = marks;
                 if (marks > Minimum) Minimum = marks;
 
-                total += marks; 
+                total += marks;
             }
 
             Mean = total / Marks.Length;
@@ -98,11 +101,11 @@ namespace ConsoleAppProject.App03
             Console.WriteLine();
 
         }
-         public void CalculateGradeProfile()
+        public void CalculateGradeProfile()
         {
             for (int i = 0; i < GradeProfile.Length; i++)
             {
-                GradeProfile[i] = 0; 
+                GradeProfile[i] = 0;
             }
             foreach (int mark in Marks)
             {
@@ -111,14 +114,52 @@ namespace ConsoleAppProject.App03
 
                 OutputGradeProfile();
             }
-            
 
-            
-            
+
+
+
         }
         public void CalculateMark()
+
         {
-            
+            OutputHeading();
+
+            string[] choices = { " input Marks ", " Output Marks ", "Output stats", "Output Grade profile", "Quit" };
+
+            int choiceNo = ConsoleHelper.SelectChoice(choices);
+
+            if (choiceNo == 1)
+                Console.WriteLine("Inputmarks");
+
+            else if (choiceNo == 2)
+                Console.WriteLine("output marks");
+
+            else if (choiceNo == 3)
+                Console.WriteLine("Output stats");
+
+            else if (choiceNo == 4)
+                OutputGradeProfile();
+
+            else if (choiceNo == 5)
+                System.Environment.Exit(0);
+
+
+        }
+        public static void OutputHeading()
+        {
+            Console.WriteLine(" .................................. ");
+            Console.WriteLine("Student Grades Calculator");
+            Console.WriteLine("By Berzin Daruwala");
+            Console.WriteLine(" .................................. ");
+
+        }
+
+
+        internal void InputMarks(int[] Marks)
+
+
+        {
+
         }
     }
 }
