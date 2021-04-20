@@ -1,6 +1,7 @@
 ﻿using ConsoleAppProject.App01;
 using ConsoleAppProject.App02;
 using ConsoleAppProject.App03;
+using ConsoleAppProject.App04;
 using System;
 
 namespace ConsoleAppProject
@@ -21,6 +22,8 @@ namespace ConsoleAppProject
 
         private static StudentGrades calculator = new StudentGrades();
 
+        private static NetworkApp app04 = new NetworkApp();
+
         public static void Main(string[] args)
         {
 
@@ -31,6 +34,7 @@ namespace ConsoleAppProject
             Console.WriteLine("1. Distance converter");
             Console.WriteLine("2. BMI calculator");
             Console.WriteLine("3. Student Grades calculator");
+            Console.WriteLine("4. Social network application");
             Console.WriteLine();
             string choice = Console.ReadLine();
 
@@ -40,7 +44,7 @@ namespace ConsoleAppProject
 
 
 
-            string[] choices = { " Distance Converter ", " BMI Calculator ", "Student Grades Calcuator" };
+            string[] choices = { " Distance Converter ", " BMI Calculator ", "Student Grades Calcuator", "Social network" };
 
             int choiceNo = ConsoleHelper.SelectChoice(choices);
 
@@ -54,11 +58,15 @@ namespace ConsoleAppProject
             }
             if (choiceNo == 3)
             {
-                calculator.CalculateMark();  
+                calculator.CalculateMark();
             }
+            if (choiceNo == 4)
+            {
+                app04.DisplayMenu();
+            }
+
+
+
         }
-
-
-
     }
 }

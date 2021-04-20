@@ -41,5 +41,15 @@ namespace ConsoleAppProject.App04
             this.Caption = caption;  
         }
 
+        public override void Display()
+        {
+            Console.WriteLine("PhotoPost display method");
+            Console.WriteLine($" Filename: {Filename}");
+            Console.WriteLine($" caption: {Caption}");
+
+            base.Display();
+        }
+
+
     }
 }
