@@ -21,6 +21,12 @@ namespace ConsoleAppProject.App04
     public class NewsFeed
     {
         public const string AUTHOR = "Berzin";
+
+        public string getAuthor()
+        {
+            return AUTHOR;
+        }
+
         private readonly List<Post> posts;
 
         ///<summary>
@@ -29,10 +35,10 @@ namespace ConsoleAppProject.App04
         public NewsFeed()
         {
             posts = new List<Post>();
-            MessagePost Post = new MessagePost(AUTHOR, "It is a beautiful day today!");
+            MessagePost Post = new MessagePost(AUTHOR, "It is a beautiful day today!", 1);
             AddMessagePost(Post);
 
-            PhotoPost photoPost = new PhotoPost(AUTHOR, "photo1.jpg", "scenic picture of field");
+            PhotoPost photoPost = new PhotoPost(AUTHOR, "photo1.jpg", "scenic picture of field", 2);
             AddPhotoPost(photoPost);
         }
 
@@ -55,6 +61,24 @@ namespace ConsoleAppProject.App04
         public void AddPhotoPost(PhotoPost photo)
         {
             posts.Add(photo);
+        }
+
+        public void RemovePost(int id)
+        {
+            Post post = findPost(id);
+            posts.Remove(post);  
+        }
+
+        public Post findPost(int id)
+        {
+            foreach (MessagePost post in posts)
+            {
+                if (id == post.postID)
+                {
+                    return post;
+                }
+            }
+            return null;
         }
 
         ///<summary>

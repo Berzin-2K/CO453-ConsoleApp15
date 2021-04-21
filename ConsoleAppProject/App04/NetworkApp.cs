@@ -7,6 +7,8 @@ namespace ConsoleAppProject.App04
     public class NetworkApp
     {
         private NewsFeed news = new NewsFeed();
+
+        private int PostCount = 0;
         public void DisplayMenu()
         {
             ConsoleHelper.OutputHeading(" Berzin's news Feed");
@@ -17,7 +19,7 @@ namespace ConsoleAppProject.App04
             string[] choices = new string[]
                 {
                     "post Message", "Post image", "" +
-                    "Display All Posts", "Quit"
+                    "Display All Posts", "Delete Message", "Quit"
                 };
 
             bool wantToQuit = false;
@@ -30,7 +32,8 @@ namespace ConsoleAppProject.App04
                     case 1: PostMessage(); break;
                     case 2: PostImage(); break;
                     case 3: DisplayAll(); break;
-                    case 4: wantToQuit = true; break;
+                    case 4: DeleteMessage(); break;
+                    case 5: wantToQuit = true; break;
                 }
             } while (!wantToQuit);
         }
@@ -42,12 +45,30 @@ namespace ConsoleAppProject.App04
 
         private void PostImage()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Enter file name: ");
+            string filename = Console.ReadLine();
+            Console.WriteLine("Enter Caption: ");
+            string caption = Console.ReadLine();
+            PhotoPost post = new PhotoPost(news.getAuthor(), filename, caption, PostCount);
+            news.AddPhotoPost(post);
+
         }
 
         private void PostMessage()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Enter Your message");
+            PostCount++;
+            string message = Console.ReadLine();
+            MessagePost post = new MessagePost(news.getAuthor(), message, PostCount);
+            news.AddMessagePost(post);
+
+        }
+
+        private void DeleteMessage()
+        {
+            Console.WriteLine("Enter the ID of the post you want to delete ");
+            int id = Convert.ToInt32(Console.ReadLine());
+            news.RemovePost(id); 
         }
     }
 }

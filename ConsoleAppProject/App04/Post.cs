@@ -9,6 +9,8 @@ namespace ConsoleAppProject.App04
 
         private readonly List<String> comments;
 
+        public int postID;
+
 
         // username of the post's author
         public String Username { get; }
@@ -18,12 +20,14 @@ namespace ConsoleAppProject.App04
         /// <summary>
         /// 
         /// </summary>
-        public Post(string author)
+        public Post(string author, int id)
         {
             this.Username = author;
             Timestamp = DateTime.Now;
             likes = 0;
             comments = new List<String>();
+
+            postID = id;
         }
         /// <summary>
         /// Record one more 'Like' indication from a user.
