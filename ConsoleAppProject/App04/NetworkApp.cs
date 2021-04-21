@@ -10,6 +10,9 @@ namespace ConsoleAppProject.App04
         public void DisplayMenu()
         {
             ConsoleHelper.OutputHeading(" Berzin's news Feed");
+            DateTime dateTime = DateTime.Now;
+            Console.WriteLine(dateTime.ToLongDateString());
+            Console.WriteLine(dateTime.ToLongTimeString());
 
             string[] choices = new string[]
                 {
