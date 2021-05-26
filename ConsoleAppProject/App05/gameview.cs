@@ -7,6 +7,37 @@ namespace ConsoleAppProject.App05
     public class GameView
     {
         private Game game;
+
+        public void play()
+        {
+            bool wantToQuit = true;
+
+            do
+            {
+                StartGame();
+                getPlayerChoice();
+                DisplayChoice(game.human.Choice);
+                game.MakeComputerChoice();
+                DisplayChoice(game.computer.Choice);
+                 game.ScoreRound();
+                if (game.Round == game.LastRound)
+                {
+                    Console.WriteLine();
+                }
+
+            } while (!wantToQuit);
+        }
+
+        private void DisplayChoice(GameChoices choice)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void getPlayerChoice()
+        {
+            throw new NotImplementedException();
+        }
+
         public void StartGame()
         {
             SetupConsole();
@@ -27,7 +58,8 @@ namespace ConsoleAppProject.App05
             Console.SetWindowSize(100, 40);
             Console.SetBufferSize(100, 40);
 
-            Console.BackgroundColor = ConsoleColor.Yellow;
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.Clear();
         }
     }

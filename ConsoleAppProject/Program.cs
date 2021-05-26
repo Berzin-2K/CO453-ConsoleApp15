@@ -38,7 +38,7 @@ namespace ConsoleAppProject
             Console.WriteLine("2. BMI calculator");
             Console.WriteLine("3. Student Grades calculator");
             Console.WriteLine("4. Social network application");
-            Console.WriteLine("4. Ice, fire and wind RPS game");
+            Console.WriteLine("5. Ice, fire and wind RPS game");
             Console.WriteLine();
             string choice = Console.ReadLine();
 
@@ -48,7 +48,7 @@ namespace ConsoleAppProject
 
 
 
-            string[] choices = { " Distance Converter ", " BMI Calculator ", "Student Grades Calcuator", "Social network" };
+            string[] choices = { " Distance Converter ", " BMI Calculator ", "Student Grades Calcuator", "Social network", "Ice and Wind Fire rps game" };
 
             int choiceNo = ConsoleHelper.SelectChoice(choices);
 

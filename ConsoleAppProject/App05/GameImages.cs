@@ -52,9 +52,9 @@ namespace ConsoleAppProject.App05
         public static void DrawRock(int x, int y)
         {
             Console.SetCursorPosition(x, y++);   // set start position then increment y to move down
-            Console.Write("                 ___---___     ");
+            Console.Write("                 //       \\    ");
             Console.SetCursorPosition(x, y++);
-            Console.Write("              .--         --.    ");
+            Console.Write("              ./            \\    ");
             Console.SetCursorPosition(x, y++);
             Console.Write("           ./   ()       .-. \\.   ");
             Console.SetCursorPosition(x, y++);
