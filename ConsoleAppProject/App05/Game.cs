@@ -37,23 +37,6 @@ namespace ConsoleAppProject.App05
 
         }
 
-
-
-
-
-        public void End()
-        {
-            if (computer.Score > human.Score)
-            {
-                Winner = computer;
-            }
-            else if (computer.Score < human.Score)
-            {
-                Winner = human;
-            }
-            else winner = null;
-        }
-
        
     }
 }
