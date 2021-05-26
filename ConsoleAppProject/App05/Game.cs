@@ -16,7 +16,7 @@ namespace ConsoleAppProject.App05
 
         public Player CurrentPlayer { get; set;  }
 
-        public Player winner { get; }
+        public Player winner { get; set; }
 
         public Game(string name)
         {
@@ -37,6 +37,23 @@ namespace ConsoleAppProject.App05
 
         }
 
-       
+        private Random generator = new Random(55);
+
+
+
+        public void MakeComputerChoice()
+        {
+            int choice = generator.Next(1, 4);
+            switch(choice)
+            {
+                case 1: computer.Choice = GameChoices.Ice; break;
+                case 2: computer.Choice = GameChoices.Fire; break;
+                case 3: computer.Choice = GameChoices.Wind; break;
+            }
+        }
+
+        public void ScoreRound()
+        { 
+        }
     }
 }

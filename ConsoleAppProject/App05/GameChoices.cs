@@ -6,6 +6,6 @@ namespace ConsoleAppProject.App05
 {
     public enum GameChoices
     {
-        None, Ice, Fire, wind
+        None, Ice, Fire, Wind
     }
 }
