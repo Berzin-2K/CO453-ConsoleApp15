@@ -49,30 +49,30 @@ namespace ConsoleAppProject.App05
         /// 
         /// *******************************************************
         /// </summary>
-        public static void DrawRock(int x, int y)
+        public static void DrawFire(int x, int y)
         {
             Console.SetCursorPosition(x, y++);   // set start position then increment y to move down
             Console.Write("                 //       \\    ");
             Console.SetCursorPosition(x, y++);
             Console.Write("              ./            \\    ");
             Console.SetCursorPosition(x, y++);
-            Console.Write("           ./   ()       .-. \\.   ");
+            Console.Write("           ./   ()       ~   \\.   ");
             Console.SetCursorPosition(x, y++);
-            Console.Write("           /   o    .   (   )  \\  ");
+            Console.Write("           /   ~    ~          \\  ");
             Console.SetCursorPosition(x, y++);
-            Console.Write("          / .            '-'    \\  ");
+            Console.Write("          / .            ~      \\  ");
             Console.SetCursorPosition(x, y++);
-            Console.Write("         /     ()   ()           \\ ");
+            Console.Write("         /     #   #              \\ ");
             Console.SetCursorPosition(x, y++);
-            Console.Write("        |    o           ()       | ");
+            Console.Write("        |    o           ~          | ");
             Console.SetCursorPosition(x, y++);
-            Console.Write("        |      .--.           O   | ");
+            Console.Write("        |      .--.           ~      | ");
             Console.SetCursorPosition(x, y++);
-            Console.Write("         \\ .  |    |              |  ");
+            Console.Write("         \\ .  #    #                |  ");
             Console.SetCursorPosition(x, y++);
-            Console.Write("          \\   `.__.'     o   .   /    ");
+            Console.Write("          \\   `.__.'     ~   .     /    ");
             Console.SetCursorPosition(x, y++);
-            Console.Write("           `\\  o    ()         /'    ");
+            Console.Write("           `\\  ~    ~           /'    ");
             Console.SetCursorPosition(x, y++);
             Console.Write("              `--___    ___--'    ");
             Console.SetCursorPosition(x, y);

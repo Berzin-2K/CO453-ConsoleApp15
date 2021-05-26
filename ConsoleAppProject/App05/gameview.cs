@@ -17,8 +17,9 @@ namespace ConsoleAppProject.App05
                 StartGame();
                 getPlayerChoice();
                 DisplayChoice(game.human.Choice);
+                
                 game.MakeComputerChoice();
-                DisplayChoice(game.computer.Choice);
+                DisplayChoice(GameChoices.Fire);
                  game.ScoreRound();
                 if (game.Round == game.LastRound)
                 {
@@ -30,7 +31,11 @@ namespace ConsoleAppProject.App05
 
         private void DisplayChoice(GameChoices choice)
         {
-            throw new NotImplementedException();
+            choice = GameChoices.Fire;
+            if (choice == GameChoices.Fire)
+            {
+                GameImages.DrawFire(10, 10);
+            }
         }
 
         private void getPlayerChoice()
