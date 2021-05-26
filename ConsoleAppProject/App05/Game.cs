@@ -9,8 +9,8 @@ namespace ConsoleAppProject.App05
         public const int MAXIMUM_ROUND = 10;
 
         public int Round { get; set; }
-
-            public Player human { get; }
+        public int LastRound { get; set; }
+        public Player human { get; }
 
         public Player computer { get; }
 
@@ -29,6 +29,7 @@ namespace ConsoleAppProject.App05
         public void  Start()
         {
             Round = 1;
+            LastRound = 3;
             CurrentPlayer = human;
 
             human.Score = 0;
@@ -53,7 +54,44 @@ namespace ConsoleAppProject.App05
         }
 
         public void ScoreRound()
-        { 
+        {
+            if (human.Choice == GameChoices.Fire &&
+                computer.Choice == GameChoices.Wind)
+            {
+                computer.Score += 2;
+                winner = computer;
+            }
+            if (human.Choice == GameChoices.Ice &&
+                computer.Choice == GameChoices.Fire)
+            {
+                computer.Score += 2;
+                winner = computer;
+            }
+            if (human.Choice == GameChoices.Wind &&
+                computer.Choice == GameChoices.Ice)
+            {
+                computer.Score += 2;
+                winner = computer;
+            }
+            if (Round < LastRound)
+            {
+                Round++;
+            }
+            else End();
+
+        }
+
+        public void End()
+        {
+            if (computer.Score > human.Score)
+            {
+                winner = computer;
+            }
+            if (computer.Score < human.Score)
+            {
+                winner = human;
+            }
+            else winner = null;
         }
     }
 }
