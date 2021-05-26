@@ -14,7 +14,7 @@ namespace ConsoleAppProject.App05
 
         public Player computer { get; }
 
-        public Player CurrentPlayer { get; }
+        public Player CurrentPlayer { get; set;  }
 
         public Player winner { get; }
 
@@ -26,7 +26,7 @@ namespace ConsoleAppProject.App05
             Round = 0;
         }
 
-        public void start Start()
+        public void  Start()
         {
             Round = 1;
             CurrentPlayer = human;

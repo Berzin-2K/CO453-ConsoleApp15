@@ -19,7 +19,7 @@ namespace ConsoleAppProject.App05
             this.Name = name;
             this.PlayerType = PlayerType;
             Score = 0;
-            Choice = GameChoices;
+            Choice = GameChoices.None;
         }
 
 
