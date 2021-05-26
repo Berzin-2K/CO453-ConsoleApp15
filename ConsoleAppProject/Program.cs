@@ -2,6 +2,7 @@
 using ConsoleAppProject.App02;
 using ConsoleAppProject.App03;
 using ConsoleAppProject.App04;
+using ConsoleAppProject.App05;
 using System;
 
 namespace ConsoleAppProject
@@ -24,6 +25,8 @@ namespace ConsoleAppProject
 
         private static NetworkApp app04 = new NetworkApp();
 
+        private static GameView app05 = new GameView();
+
         public static void Main(string[] args)
         {
 
@@ -35,6 +38,7 @@ namespace ConsoleAppProject
             Console.WriteLine("2. BMI calculator");
             Console.WriteLine("3. Student Grades calculator");
             Console.WriteLine("4. Social network application");
+            Console.WriteLine("4. Ice, fire and wind RPS game");
             Console.WriteLine();
             string choice = Console.ReadLine();
 
@@ -63,6 +67,10 @@ namespace ConsoleAppProject
             if (choiceNo == 4)
             {
                 app04.DisplayMenu();
+            }
+            if (choiceNo == 5)
+            {
+                app05.StartGame();
             }
 
 
