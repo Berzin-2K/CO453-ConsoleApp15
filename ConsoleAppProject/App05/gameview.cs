@@ -31,7 +31,6 @@ namespace ConsoleAppProject.App05
 
         private void DisplayChoice(GameChoices choice)
         {
-            choice = GameChoices.Fire;
             if (choice == GameChoices.Fire)
             {
                 GameImages.DrawFire(10, 10);
@@ -40,7 +39,7 @@ namespace ConsoleAppProject.App05
 
         private void getPlayerChoice()
         {
-            throw new NotImplementedException();
+            
         }
 
         public void StartGame()

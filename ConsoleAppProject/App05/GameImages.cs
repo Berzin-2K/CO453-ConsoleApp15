@@ -64,13 +64,13 @@ namespace ConsoleAppProject.App05
             Console.SetCursorPosition(x, y++);
             Console.Write("         /     #   #              \\ ");
             Console.SetCursorPosition(x, y++);
-            Console.Write("        |    o           ~          | ");
+            Console.Write("        |    o           ~           | ");
             Console.SetCursorPosition(x, y++);
             Console.Write("        |      .--.           ~      | ");
             Console.SetCursorPosition(x, y++);
-            Console.Write("         \\ .  #    #                |  ");
+            Console.Write("         \\ .   ~   ~                |  ");
             Console.SetCursorPosition(x, y++);
-            Console.Write("          \\   `.__.'     ~   .     /    ");
+            Console.Write("          \\   `#'     ~   .        /    ");
             Console.SetCursorPosition(x, y++);
             Console.Write("           `\\  ~    ~           /'    ");
             Console.SetCursorPosition(x, y++);

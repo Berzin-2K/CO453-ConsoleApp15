@@ -70,7 +70,7 @@ namespace ConsoleAppProject
             }
             if (choiceNo == 5)
             {
-                app05.StartGame();
+                app05.play();
             }
 
 
